@@ -4,6 +4,7 @@ use App\Livewire\Roster\Index;
 use App\Livewire\Roster\Renew;
 use App\Livewire\Roster\Search;
 use App\Livewire\Roster\Show;
+use App\Livewire\TVCP\TransferApplication;
 
 Route::group([
     'as' => 'site.roster.',
@@ -15,3 +16,5 @@ Route::group([
     Route::get('/search', Search::class)->name('search');
     Route::get('/{account}', Show::class)->name('show');
 });
+
+Route::get('/transfer', TransferApplication::class)->middleware('auth_full_group')->name('site.tvcp.transfer');
