@@ -12,7 +12,7 @@ class VisitTransferApplicationPolicy
      */
     public function viewAny(Account $account): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -20,7 +20,7 @@ class VisitTransferApplicationPolicy
      */
     public function view(Account $account, VisitTransferApplication $visitTransferApplication): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -28,7 +28,7 @@ class VisitTransferApplicationPolicy
      */
     public function create(Account $account): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -36,7 +36,7 @@ class VisitTransferApplicationPolicy
      */
     public function update(Account $account, VisitTransferApplication $visitTransferApplication): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -44,7 +44,7 @@ class VisitTransferApplicationPolicy
      */
     public function delete(Account $account, VisitTransferApplication $visitTransferApplication): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -52,7 +52,7 @@ class VisitTransferApplicationPolicy
      */
     public function restore(Account $account, VisitTransferApplication $visitTransferApplication): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -60,6 +60,6 @@ class VisitTransferApplicationPolicy
      */
     public function forceDelete(Account $account, VisitTransferApplication $visitTransferApplication): bool
     {
-        //
+        return false;
     }
 }

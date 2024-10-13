@@ -12,12 +12,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('visit_transfer_applications', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+        Schema::create('tvcp_visit_transfer_applications', function (Blueprint $table) {
+            $table->uuid('id')->primary()->default();
             $table->unsignedInteger('account_id');
             $table->enum('type', [VisitTransferApplication::TYPE_TRANSFER, VisitTransferApplication::TYPE_VISIT]);
             $table->enum('status', VisitTransferApplication::STATUSES)->default(VisitTransferApplication::STATUS_SUBMITTED);
             $table->json('questions_data')->nullable();
+            $table->json('state_history')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('visit_transfer_applications');
+        Schema::dropIfExists('tvcp_visit_transfer_applications');
     }
 };
