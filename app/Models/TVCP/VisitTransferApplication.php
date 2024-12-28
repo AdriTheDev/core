@@ -16,6 +16,7 @@ class VisitTransferApplication extends Model
     protected $guarded = [];
 
     protected $keyType = 'string';
+
     public $incrementing = false;
 
     protected $with = ['account'];
@@ -45,7 +46,7 @@ class VisitTransferApplication extends Model
     public static function booted()
     {
         static::creating(function (VisitTransferApplication $application) {
-            # populate initial state
+            // populate initial state
             $application->state_history = json_encode([
                 [
                     'status' => self::STATUS_SUBMITTED,

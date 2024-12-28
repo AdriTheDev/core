@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('status', VisitTransferApplication::STATUSES)->default(VisitTransferApplication::STATUS_SUBMITTED);
             $table->json('questions_data')->nullable();
             $table->json('state_history')->nullable();
+            $table->json('verification_steps')->nullable();
             $table->timestamps();
         });
     }
